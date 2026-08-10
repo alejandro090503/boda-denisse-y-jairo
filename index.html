@@ -9,11 +9,12 @@
 <meta property="og:url"         content="https://boda-denisse-y-jairo.vercel.app/">
 <meta property="og:title"       content="Denisse &amp; Jairo · Boda · 9 Enero 2027">
 <meta property="og:description" content="Nos casamos el 9 de enero de 2027 en Cuautla, Morelos. ¡Estás invitado!">
-<meta property="og:image"       content="https://boda-denisse-y-jairo.vercel.app/envelope-cover.png">
+<meta property="og:image"       content="https://boda-denisse-y-jairo.vercel.app/og-image.jpg">
 <meta property="og:image:width"  content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card"       content="summary_large_image">
-<meta name="twitter:image"      content="https://boda-denisse-y-jairo.vercel.app/envelope-cover.png">
+<meta name="twitter:image"      content="https://boda-denisse-y-jairo.vercel.app/og-image.jpg">
+<meta name="theme-color" content="#F5F0E3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -204,32 +205,32 @@ section{padding:60px 26px;}
   top:0;bottom:0;width:1px;z-index:0;
   background:linear-gradient(to bottom,
     transparent 0%,
-    rgba(201,162,83,0.35) 10%,
-    rgba(74,106,156,0.25) 45%,
-    rgba(201,162,83,0.30) 80%,
+    rgba(125,144,64,0.35) 10%,
+    rgba(86,96,68,0.25) 45%,
+    rgba(125,144,64,0.30) 80%,
     transparent 100%);
 }
 .itv3-glow{
   position:absolute;left:50%;transform:translateX(-50%);
   top:0;width:5px;height:110px;
-  background:linear-gradient(to bottom,transparent,rgba(201,162,83,0.55) 20%,rgba(201,162,83,0.90) 50%,rgba(201,162,83,0.55) 80%,transparent);
+  background:linear-gradient(to bottom,transparent,rgba(125,144,64,0.55) 20%,rgba(125,144,64,0.90) 50%,rgba(125,144,64,0.55) 80%,transparent);
   filter:blur(3px);border-radius:6px;z-index:1;pointer-events:none;
 }
 .itv3-item{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 16px 4px;width:100%;}
 .itv3-gem{
   width:9px;height:9px;
-  background:linear-gradient(135deg,#EDD5A0 30%,#8F6820);
+  background:linear-gradient(135deg,#C2CA8A 30%,#3A4A2D);
   transform:rotate(45deg);border-radius:2px;
-  box-shadow:0 0 0 4px rgba(201,162,83,0.12),0 0 18px rgba(201,162,83,0.45);
+  box-shadow:0 0 0 4px rgba(125,144,64,0.12),0 0 18px rgba(125,144,64,0.45);
   margin-bottom:18px;flex-shrink:0;
 }
 .itv3-gem-blue{
-  background:linear-gradient(135deg,#8AA4C8 30%,#0E2347);
-  box-shadow:0 0 0 4px rgba(74,106,156,0.14),0 0 18px rgba(74,106,156,0.45);
+  background:linear-gradient(135deg,#8B9848 30%,#566044);
+  box-shadow:0 0 0 4px rgba(86,96,68,0.14),0 0 18px rgba(86,96,68,0.45);
 }
 .itv3-gem-lila{
-  background:linear-gradient(135deg,#E8D4A8 30%,#6A4A28);
-  box-shadow:0 0 0 4px rgba(212,184,140,0.10),0 0 18px rgba(212,184,140,0.38);
+  background:linear-gradient(135deg,#C2CA8A 30%,#7D8F40);
+  box-shadow:0 0 0 4px rgba(194,202,138,0.12),0 0 18px rgba(194,202,138,0.38);
 }
 .itv3-time{
   font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;
@@ -237,7 +238,7 @@ section{padding:60px 26px;}
 }
 .itv3-ev{
   font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:14px;color:rgba(42,26,62,0.55);
+  font-size:14px;color:rgba(58,74,45,0.6);
   letter-spacing:3px;text-transform:uppercase;line-height:1.5;text-indent:3px;
 }
 .itv3-sub{
@@ -269,33 +270,18 @@ section{padding:60px 26px;}
 .amp{font-style:italic;font-size:15px;color:var(--rose);}
 .flor{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--rose);opacity:.5;letter-spacing:10px;}
 
-/* ── GALERÍA / WHEEL ── */
+/* ── GALERÍA / WHEEL 3D ── */
 .gallery{padding:60px 0 80px;}
 .gallery-head{text-align:center;margin-bottom:50px;padding:0 26px;}
 .gallery-sub{font-family:'Great Vibes',cursive;color:var(--rose);font-size:32px;line-height:1;margin-top:8px;}
-.wheel-stage{position:relative;width:100%;height:min(680px,108vw);max-width:680px;margin:0 auto;padding:clamp(20px,4vw,60px);display:flex;align-items:center;justify-content:center;}
-.wheel{position:relative;width:min(560px,92vw);height:min(560px,92vw);border-radius:50%;}
-.wheel-spoke{position:absolute;inset:-2px;border-radius:50%;border:1px solid rgba(201,162,83,0.30);}
-.wheel-spoke--inner{inset:min(80px,15%);border-style:dashed;opacity:.5;}
-.wheel-item{
-  position:absolute;
-  --r:min(270px,44vw);
-  --angle:calc(var(--i) * (360deg / 16));
-  left:50%;top:50%;
-  width:min(110px,17vw);
-  height:min(150px,23vw);
-  margin-left:calc(min(110px,17vw) / -2);
-  margin-top:calc(min(150px,23vw) / -2);
-  transform:rotate(var(--angle)) translateY(calc(-1 * var(--r))) rotate(calc(-1 * var(--angle)));
-  border-radius:8px;overflow:hidden;
-  box-shadow:0 8px 32px rgba(14,35,71,.2),0 1px 4px rgba(14,35,71,.1);
-}
-.wheel-item-inner{position:relative;width:100%;height:100%;cursor:zoom-in;}
-.wheel-item-inner img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s ease;}
-.wheel-item-inner:hover img{transform:scale(1.05);}
-.wheel-hub{position:absolute;width:clamp(50px,7vw,80px);height:clamp(50px,7vw,80px);color:var(--rose);opacity:.6;}
-#wheel-spark-layer{position:absolute;inset:0;pointer-events:none;z-index:10;overflow:visible;}
-.wheel-spark{position:absolute;pointer-events:none;transform-origin:center center;will-change:transform,opacity;filter:drop-shadow(0 0 5px rgba(237,213,160,.9));}
+.wheel-stage{position:relative;width:100%;height:460px;max-width:1080px;margin:40px auto 0;perspective:2000px;transform-style:preserve-3d;overflow:visible;padding:0;}
+.wheel{position:absolute;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;}
+.wheel.dragging{cursor:grabbing}
+.wheel-item{position:absolute;width:155px;height:218px;left:50%;top:50%;margin-left:-77px;margin-top:-109px;border-radius:18px;overflow:hidden;border:2px solid rgba(125,144,64,.38);box-shadow:0 12px 40px rgba(58,74,45,.20);user-select:none;-webkit-user-select:none;background:var(--card);transition:box-shadow .4s ease;}
+.wheel-item:hover{box-shadow:0 14px 48px rgba(125,144,64,.35),0 0 0 1px rgba(125,144,64,.5);}
+.wheel-item img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none;filter:saturate(1.02) contrast(1.05);}
+.wheel-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;letter-spacing:3px;color:var(--accent);text-align:center;margin-top:34px;opacity:.72;}
+@media(max-width:520px){.wheel-stage{height:400px}.wheel-item{width:130px;height:182px;margin-left:-65px;margin-top:-91px}}
 
 /* ── LIGHTBOX ── */
 #lightbox{position:fixed;inset:0;z-index:9990;display:none;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);background:rgba(20,8,40,.85);backdrop-filter:blur(18px) saturate(1.15);-webkit-backdrop-filter:blur(18px) saturate(1.15);opacity:0;cursor:zoom-out;}
@@ -305,14 +291,44 @@ section{padding:60px 26px;}
 #lightbox-close:hover{background:rgba(10,24,48,.8);transform:scale(1.08);}
 
 /* ── MESA DE REGALOS ── */
+.gift-gift-wrap{display:flex;flex-direction:column;align-items:center;gap:32px;padding:8px 0 4px;}
+.gift-box-btn{background:none;border:none;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;padding:0;display:flex;flex-direction:column;align-items:center;gap:16px;}
+.gift-box{position:relative;width:110px;height:108px;filter:drop-shadow(0 8px 28px rgba(58,74,45,.22));}
+.gift-box-lid{
+  position:absolute;top:-20px;left:-10px;right:-10px;height:42px;
+  background:var(--dark);border-radius:8px;
+  transition:transform .55s cubic-bezier(.34,1.56,.64,1),opacity .4s ease;
+  transform-origin:bottom center;display:flex;align-items:center;justify-content:center;
+}
+.gift-box-btn.opened .gift-box-lid{transform:translateY(-60px) rotate(-12deg);opacity:0;}
+.gift-bow-v{position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:13px;background:var(--accent);}
+.gift-bow-loop{
+  position:absolute;width:20px;height:20px;border-radius:50%;top:-13px;
+  border:6px solid var(--accent);
+}
+.gift-bow-l{left:calc(50% - 27px);}
+.gift-bow-r{right:calc(50% - 27px);}
+.gift-box-base{
+  position:absolute;bottom:0;left:0;right:0;top:20px;
+  background:var(--dark);border-radius:0 0 10px 10px;
+  display:flex;align-items:stretch;justify-content:center;overflow:hidden;
+}
+.gift-ribbon-h{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:13px;background:var(--accent);}
+.gift-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;letter-spacing:2px;color:var(--rose);opacity:.8;transition:opacity .4s;}
+.gift-box-btn.opened .gift-hint{opacity:0;pointer-events:none;height:0;overflow:hidden;}
+.gift-reveal{display:none;flex-direction:column;align-items:center;gap:16px;text-align:center;}
+.gift-reveal.show{display:flex;animation:giftFadeIn .7s ease both;}
+@keyframes giftFadeIn{from{opacity:0;transform:translateY(18px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+.liverpool-logo-svg{width:min(230px,80%);height:auto;display:block;}
+.gift-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;letter-spacing:2px;color:rgba(58,74,45,.6);margin:0;}
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;display:block;}
+/* legacy kept for safe-side */
 .gift-grid{display:flex;flex-direction:column;gap:16px;}
 .gift-card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 6px 36px rgba(14,35,71,.1);display:flex;align-items:center;gap:18px;}
 .gift-logo-wrap{width:64px;height:64px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.gift-logo-wrap.bank{background:var(--dark);}
 .gift-body{flex:1;min-width:0;}
 .gift-body .gb-name{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--dark);font-weight:500;margin-bottom:2px;}
 .gift-body .gb-desc{font-family:'Lato',sans-serif;font-size:11px;letter-spacing:1px;color:var(--rose);text-transform:uppercase;}
-.gift-body .gb-account{font-family:'Lato',sans-serif;font-size:13px;color:var(--text);margin-top:6px;letter-spacing:1px;}
 /* Sobre interactivo */
 .env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0;width:100%;}
 .env-body{perspective:700px;position:relative;width:260px;height:200px;animation:env-breathe 3.6s ease-in-out infinite;margin:0 auto;}
@@ -435,8 +451,8 @@ footer .fc a{color:inherit;text-decoration:none;}
 
 <!-- ENVELOPE -->
 <div id="envelope-screen" role="button" aria-label="Toca para abrir tu invitación">
-  <img id="env-image" src="./envelope-cover.png" alt="Invitación Denisse y Jairo">
-  <video id="env-video" src="./envelope-open.mp4" playsinline webkit-playsinline muted preload="auto"></video>
+  <img id="env-image" src="./sobre.jpg" alt="Invitación Denisse y Jairo">
+  <video id="env-video" src="./sobre-video.mp4" playsinline webkit-playsinline muted preload="auto"></video>
   <p class="envelope-hint" id="env-hint">Toca para abrir</p>
 </div>
 <div id="env-flash"></div>
@@ -568,28 +584,24 @@ footer .fc a{color:inherit;text-decoration:none;}
 
     <div class="loc-card rv">
       <div class="venue-photo-wrap">
-        <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908594740-0.jpg" alt="Ceremonia — Cuautla Morelos" class="venue-photo" loading="lazy">
+        <img src="https://bodasenmorelos.com/wp-content/uploads/2019/01/fabricaelmolino1-1024x699.jpg" alt="Jardín de Eventos El Molino — Cuautla Morelos" class="venue-photo" loading="lazy">
       </div>
-      <div class="lt">Recepción</div>
-      <div class="ls">Bienvenida de Invitados</div>
-      <div class="lh">3:00 pm</div>
-      <p>Cuautla · Morelos</p>
+      <div class="lt">El Molino</div>
+      <div class="ls">Jardín de Eventos · Antigua Fábrica de Hielo</div>
+      <div class="lh" style="display:flex;justify-content:center;align-items:flex-start;gap:20px;flex-wrap:wrap;">
+        <span style="display:flex;flex-direction:column;align-items:center;">
+          <small style="font-family:'Lato',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:3px;">Recepción</small>
+          3:00 pm
+        </span>
+        <span style="color:var(--rose);opacity:.35;font-size:20px;padding-top:8px;">·</span>
+        <span style="display:flex;flex-direction:column;align-items:center;">
+          <small style="font-family:'Lato',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:3px;">Ceremonia</small>
+          3:30 pm
+        </span>
+      </div>
+      <p>Calle Córdoba 111 · Centro · Cuautla, Morelos</p>
       <div class="map-wrap">
-        <iframe src="https://www.google.com/maps?q=Cuautla,+Morelos,+México&z=14&output=embed" width="100%" height="200" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Cuautla Morelos"></iframe>
-      </div>
-      <a class="btn" href="https://maps.app.goo.gl/KJQX2gmfRngArqzbA" target="_blank" rel="noopener">Cómo Llegar</a>
-    </div>
-
-    <div class="loc-card rv">
-      <div class="venue-photo-wrap">
-        <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908658040-0.jpg" alt="Ceremonia Religiosa — Cuautla Morelos" class="venue-photo" loading="lazy">
-      </div>
-      <div class="lt">Ceremonia</div>
-      <div class="ls">Ceremonia Religiosa</div>
-      <div class="lh">3:30 pm</div>
-      <p>Cuautla · Morelos</p>
-      <div class="map-wrap">
-        <iframe src="https://www.google.com/maps?q=Cuautla,+Morelos,+México&z=14&output=embed" width="100%" height="200" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Cuautla Morelos"></iframe>
+        <iframe src="https://www.google.com/maps?q=Cuautla,+Morelos,+México&z=14&output=embed" width="100%" height="200" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="El Molino Cuautla Morelos"></iframe>
       </div>
       <a class="btn" href="https://maps.app.goo.gl/KJQX2gmfRngArqzbA" target="_blank" rel="noopener">Cómo Llegar</a>
     </div>
@@ -733,38 +745,22 @@ footer .fc a{color:inherit;text-decoration:none;}
       <div class="gallery-sub rv">Denisse &amp; Jairo</div>
     </div>
     <div class="wheel-stage">
-      <div id="wheel-spark-layer" aria-hidden="true"></div>
       <div class="wheel" id="wheel">
-        <span class="wheel-spoke" aria-hidden="true"></span>
-        <span class="wheel-spoke wheel-spoke--inner" aria-hidden="true"></span>
-        <div class="wheel-item" style="--i:0"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908499405-5.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:1"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908594740-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:2"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908658040-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:3"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908704383-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:4"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908790468-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:5"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908818865-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:6"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908499405-5.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:7"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908594740-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:8"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908658040-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:9"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908704383-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:10"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908790468-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:11"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908818865-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:12"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908499405-5.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:13"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908594740-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:14"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908658040-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:15"><div class="wheel-item-inner"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908704383-0.jpg" alt="Denisse y Jairo" loading="lazy"></div></div>
-      </div>
-      <div class="wheel-hub" aria-hidden="true">
-        <svg viewBox="0 0 60 60" fill="none">
-          <g stroke="currentColor" stroke-width=".8" fill="none">
-            <circle cx="30" cy="30" r="18" opacity=".4"/>
-            <circle cx="30" cy="30" r="10"/>
-            <circle cx="30" cy="30" r="3" fill="currentColor"/>
-            <path d="M30 14 L30 20 M30 40 L30 46 M14 30 L20 30 M40 30 L46 30" opacity=".55"/>
-          </g>
-        </svg>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908499405-5.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908594740-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908658040-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908704383-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908790468-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908818865-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908499405-5.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908594740-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908658040-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908704383-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908790468-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908818865-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
       </div>
     </div>
+    <p class="wheel-hint">Arrastra para girar</p>
   </section>
 
   <!-- LIGHTBOX -->
@@ -788,19 +784,30 @@ footer .fc a{color:inherit;text-decoration:none;}
   <section class="rv" id="sgifts">
     <div class="eyebrow">Con Cariño</div>
     <h2 class="sec-title">Mesa de Regalos</h2>
-    <!-- Liverpool -->
-    <div class="gift-grid" style="margin-bottom:28px;">
-      <div class="gift-card">
-        <div class="gift-logo-wrap" style="background:#E30016;">
-          <svg viewBox="0 0 64 64" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="5" y="44" font-family="Georgia,serif" font-size="38" font-weight="bold" fill="#fff">L</text></svg>
+    <div class="gift-gift-wrap">
+      <button class="gift-box-btn" id="giftBoxBtn" aria-label="Abrir regalo" aria-expanded="false">
+        <div class="gift-box" aria-hidden="true">
+          <div class="gift-box-lid">
+            <div class="gift-bow-v"></div>
+            <div class="gift-bow-loop gift-bow-l"></div>
+            <div class="gift-bow-loop gift-bow-r"></div>
+          </div>
+          <div class="gift-box-base">
+            <div class="gift-ribbon-h"></div>
+          </div>
         </div>
-        <div class="gift-body">
-          <div class="gb-name">Liverpool</div>
-          <div class="gb-desc">Mesa de Regalos</div>
-          <a class="btn" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60019125" target="_blank" rel="noopener" style="margin-top:10px;font-size:10px;">Ver Lista</a>
-        </div>
+        <span class="gift-hint">Toca el regalo</span>
+      </button>
+      <div class="gift-reveal" id="giftReveal" aria-hidden="true">
+        <svg class="liverpool-logo-svg" viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Liverpool">
+          <rect width="320" height="90" rx="10" fill="#E30016"/>
+          <text x="160" y="62" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="2">Liverpool</text>
+        </svg>
+        <p class="gift-sub">Mesa de Regalos</p>
+        <a class="btn" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60019125" target="_blank" rel="noopener">Ver Lista de Regalos</a>
       </div>
     </div>
+    <canvas id="confettiCanvas" aria-hidden="true"></canvas>
     <!-- Sobre interactivo lluvia de sobres -->
     <div style="display:flex;flex-direction:column;align-items:center;gap:0;margin-top:8px;">
       <button class="env-interactive" aria-label="Sobre — toca para abrir" aria-expanded="false">
@@ -1056,7 +1063,7 @@ function initItinerary(){
     var gem=item.querySelector('.itv3-gem');
     var isBlue=gem.classList.contains('itv3-gem-blue');
     var isLila=gem.classList.contains('itv3-gem-lila');
-    var gc=isBlue?'122,172,232':(isLila?'155,126,212':'232,144,184');
+    var gc=isBlue?'86,96,68':(isLila?'139,152,72':'125,144,64');
     gsap.fromTo(gem,{scale:0,opacity:0},{scale:1,opacity:1,duration:0.6,ease:'back.out(2.8)',scrollTrigger:{trigger:item,start:'top 86%',once:true},
       onComplete:function(){
         gsap.timeline()
@@ -1129,53 +1136,41 @@ function initDressCode(){
   document.getElementById('gcalBtn').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+t+'&dates=20270109T210000Z/20270110T060000Z&details='+d+'&location='+l;
 })();
 
-/* ══════ WHEEL — Rueda de la Fortuna ══════ */
+/* ══════ WHEEL — Carrusel 3D ══════ */
 var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 (function initWheel(){
-  var wheel=document.getElementById('wheel');
-  if(!wheel) return;
-  var wheelItems=wheel.querySelectorAll('.wheel-item-inner');
+  var ring=document.getElementById('wheel');
+  if(!ring) return;
+  var cards=ring.querySelectorAll('.wheel-item');
+  var n=cards.length;
+  var radius=480;
+  var rot=0,vel=0,isDrag=false,startX=0,lastX=0,rafId=null;
+  cards.forEach(function(card,i){
+    card.style.transform='rotateY('+(360/n*i)+'deg) translateZ('+radius+'px)';
+  });
+  function setRot(r){rot=r;gsap.set(ring,{rotateY:rot});}
+  function inertia(){
+    if(Math.abs(vel)<0.05){vel=0;return;}
+    vel*=0.94;setRot(rot+vel);rafId=requestAnimationFrame(inertia);
+  }
+  var autoAnim=null;
+  function startAutoSpin(){
+    if(prefersReduced||isDrag||autoAnim) return;
+    autoAnim=gsap.to({},{duration:60,ease:'none',repeat:-1,onUpdate:function(){setRot(rot+0.2);}});
+  }
+  function stopAutoSpin(){if(autoAnim){autoAnim.kill();autoAnim=null;}}
+  ScrollTrigger.create({trigger:'.wheel-stage',start:'top 80%',onEnter:startAutoSpin,onLeaveBack:stopAutoSpin,onLeave:stopAutoSpin,onEnterBack:startAutoSpin});
+  function onDragStart(x){isDrag=true;stopAutoSpin();lastX=x;vel=0;cancelAnimationFrame(rafId);ring.classList.add('dragging');}
+  function onDragMove(x){if(!isDrag)return;var dx=x-lastX;vel=dx*0.55;setRot(rot+dx*0.32);lastX=x;}
+  function onDragEnd(){if(!isDrag)return;isDrag=false;ring.classList.remove('dragging');inertia();}
+  ring.addEventListener('mousedown',function(e){onDragStart(e.clientX);});
+  window.addEventListener('mousemove',function(e){onDragMove(e.clientX);});
+  window.addEventListener('mouseup',onDragEnd);
+  ring.addEventListener('touchstart',function(e){onDragStart(e.touches[0].clientX);},{passive:true});
+  ring.addEventListener('touchmove',function(e){onDragMove(e.touches[0].clientX);e.preventDefault();},{passive:false});
+  ring.addEventListener('touchend',onDragEnd);
   if(!prefersReduced){
-    gsap.fromTo('.wheel-item',{opacity:0,scale:.4},{opacity:1,scale:1,duration:1.2,stagger:.1,ease:'back.out(1.3)',scrollTrigger:{trigger:'.wheel-stage',start:'top 78%'}});
-    gsap.fromTo('.wheel-hub',{opacity:0,scale:.3,rotate:-60},{opacity:1,scale:1,rotate:0,duration:1.4,ease:'back.out(1.6)',scrollTrigger:{trigger:'.wheel-stage',start:'top 78%'}});
-    var sparkLayer=document.getElementById('wheel-spark-layer');
-    var stageEl=document.querySelector('.wheel-stage');
-    var lastSparkMs=0;
-    var SPARK_COLORS=['#C9A253','#EDD5A0','#4A6A9C','#FFFFFF','#D4B88C'];
-    var STAR_PATH='polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)';
-    function spawnWheelSparks(scrollVel){
-      var now=performance.now();
-      var absV=Math.abs(scrollVel);
-      var gap=Math.max(16,90-absV*0.06);
-      if(now-lastSparkMs<gap) return;
-      lastSparkMs=now;
-      var sw=stageEl.offsetWidth,sh=stageEl.offsetHeight;
-      var cx=sw/2,cy=sh/2;
-      var r=Math.min(260,window.innerWidth*0.43);
-      var cnt=Math.min(8,2+Math.floor(absV/200));
-      for(var k=0;k<cnt;k++){
-        (function(){
-          var angle=Math.random()*Math.PI*2;
-          var rOff=(Math.random()-0.5)*60;
-          var sx=cx+Math.cos(angle)*(r+rOff);
-          var sy=cy+Math.sin(angle)*(r+rOff);
-          var isStar=Math.random()>0.38;
-          var size=isStar?(16+Math.random()*14):(8+Math.random()*8);
-          var el=document.createElement('div');
-          el.className='wheel-spark';
-          el.style.cssText=['width:'+size+'px','height:'+size+'px','left:'+(sx-size/2)+'px','top:'+(sy-size/2)+'px','background:'+SPARK_COLORS[Math.floor(Math.random()*SPARK_COLORS.length)],isStar?'clip-path:'+STAR_PATH+';border-radius:0':'border-radius:50%'].join(';');
-          sparkLayer.appendChild(el);
-          var outA=Math.atan2(sy-cy,sx-cx);
-          var dist=55+Math.random()*90;
-          var flyX=Math.cos(outA)*dist;
-          var flyY=Math.sin(outA)*dist-(15+Math.random()*35);
-          gsap.fromTo(el,{opacity:1,scale:1,x:0,y:0,rotate:Math.random()*360},{opacity:0,scale:0.2,x:flyX,y:flyY,rotate:'+='+(Math.random()*500-250),duration:0.55+Math.random()*0.5,ease:'power1.out',onComplete:function(){if(el.parentNode)el.parentNode.removeChild(el);}});
-        })();
-      }
-    }
-    var wheelTL=gsap.timeline({scrollTrigger:{trigger:'.wheel-stage',start:'top bottom',end:'bottom top',scrub:1.2,onUpdate:function(){var v=ScrollTrigger.getVelocity();if(Math.abs(v)>20)spawnWheelSparks(v);}}});
-    wheelTL.to(wheel,{rotation:360,ease:'none'},0);
-    wheelTL.to(wheelItems,{rotation:-360,ease:'none'},0);
+    gsap.fromTo(cards,{opacity:0,scale:.4},{opacity:1,scale:1,duration:1.0,stagger:.07,ease:'back.out(1.4)',scrollTrigger:{trigger:'.wheel-stage',start:'top 80%'}});
   }
   gsap.fromTo('.gallery-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.gallery-head',start:'top 80%'}});
 })();
@@ -1203,13 +1198,58 @@ var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
     gsap.to(lbImg,{opacity:0,scale:.88,duration:.32,ease:'power2.in'});
     gsap.to(lb,{opacity:0,duration:.35,ease:'power2.in',delay:.05,onComplete:function(){lb.classList.remove('is-open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';lbImg.removeAttribute('src');}});
   }
-  document.querySelectorAll('.wheel-item-inner').forEach(function(el){
+  document.querySelectorAll('.wheel-item').forEach(function(el){
     var img=el.querySelector('img');if(!img) return;
     el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();openLightbox(img.currentSrc||img.src,img.alt);});
   });
   lb.addEventListener('click',function(e){if(e.target===lb)closeLightbox();});
   lbCls.addEventListener('click',closeLightbox);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)closeLightbox();});
+})();
+
+/* ══════ MESA DE REGALOS — gift box ══════ */
+(function(){
+  var btn=document.getElementById('giftBoxBtn');
+  var reveal=document.getElementById('giftReveal');
+  var canvas=document.getElementById('confettiCanvas');
+  if(!btn||!reveal) return;
+  function launchConfetti(){
+    if(!canvas) return;
+    canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+    var ctx=canvas.getContext('2d');
+    var colors=['#7D8F40','#3A4A2D','#C2CA8A','#8B9848','#566044','#F5F0E3','#E8DDB8'];
+    var ps=[];
+    for(var i=0;i<110;i++){
+      var cx=window.innerWidth/2;
+      ps.push({x:cx+(Math.random()-0.5)*160,y:window.innerHeight*0.5,r:3+Math.random()*5,c:colors[Math.floor(Math.random()*colors.length)],vx:(Math.random()-0.5)*9,vy:-(4+Math.random()*9),ay:0,rot:Math.random()*360,vrot:(Math.random()-0.5)*14,life:1,rect:Math.random()>0.4});
+    }
+    var fr=0;
+    function draw(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      var alive=false;
+      ps.forEach(function(p){
+        if(p.life<=0)return;alive=true;
+        p.ay+=0.16;p.x+=p.vx;p.y+=p.vy+p.ay;p.rot+=p.vrot;p.vx*=0.99;p.life-=0.007;
+        ctx.save();ctx.globalAlpha=Math.max(0,p.life);ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.c;
+        if(p.rect)ctx.fillRect(-p.r,-p.r/2,p.r*2,p.r);
+        else{ctx.beginPath();ctx.arc(0,0,p.r,0,Math.PI*2);ctx.fill();}
+        ctx.restore();
+      });
+      if(alive&&fr<320){fr++;requestAnimationFrame(draw);}
+      else ctx.clearRect(0,0,canvas.width,canvas.height);
+    }
+    draw();
+  }
+  btn.addEventListener('click',function(){
+    if(btn.classList.contains('opened'))return;
+    btn.classList.add('opened');
+    btn.setAttribute('aria-expanded','true');
+    launchConfetti();
+    setTimeout(function(){
+      reveal.classList.add('show');
+      reveal.removeAttribute('aria-hidden');
+    },560);
+  });
 })();
 
 /* ══════ LLUVIA DE SOBRES (sobre interactivo) ══════ */
