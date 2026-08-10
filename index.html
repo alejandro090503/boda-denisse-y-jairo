@@ -274,14 +274,14 @@ section{padding:60px 26px;}
 .gallery{padding:60px 0 80px;}
 .gallery-head{text-align:center;margin-bottom:50px;padding:0 26px;}
 .gallery-sub{font-family:'Great Vibes',cursive;color:var(--rose);font-size:32px;line-height:1;margin-top:8px;}
-.wheel-stage{position:relative;width:100%;height:460px;max-width:1080px;margin:40px auto 0;perspective:2000px;transform-style:preserve-3d;overflow:visible;padding:0;}
+.wheel-stage{position:relative;width:100%;height:500px;max-width:1080px;margin:40px auto 0;perspective:2000px;transform-style:preserve-3d;overflow:visible;padding:0;}
 .wheel{position:absolute;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;}
 .wheel.dragging{cursor:grabbing}
-.wheel-item{position:absolute;width:155px;height:218px;left:50%;top:50%;margin-left:-77px;margin-top:-109px;border-radius:18px;overflow:hidden;border:2px solid rgba(125,144,64,.38);box-shadow:0 12px 40px rgba(58,74,45,.20);user-select:none;-webkit-user-select:none;background:var(--card);transition:box-shadow .4s ease;}
+.wheel-item{position:absolute;width:188px;height:264px;left:50%;top:50%;margin-left:-94px;margin-top:-132px;border-radius:18px;overflow:hidden;border:2px solid rgba(125,144,64,.38);box-shadow:0 12px 40px rgba(58,74,45,.20);user-select:none;-webkit-user-select:none;background:var(--card);transition:box-shadow .4s ease;}
 .wheel-item:hover{box-shadow:0 14px 48px rgba(125,144,64,.35),0 0 0 1px rgba(125,144,64,.5);}
 .wheel-item img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none;filter:saturate(1.02) contrast(1.05);}
 .wheel-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;letter-spacing:3px;color:var(--accent);text-align:center;margin-top:34px;opacity:.72;}
-@media(max-width:520px){.wheel-stage{height:400px}.wheel-item{width:130px;height:182px;margin-left:-65px;margin-top:-91px}}
+@media(max-width:520px){.wheel-stage{height:440px}.wheel-item{width:158px;height:222px;margin-left:-79px;margin-top:-111px}}
 
 /* ── LIGHTBOX ── */
 #lightbox{position:fixed;inset:0;z-index:9990;display:none;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);background:rgba(20,8,40,.85);backdrop-filter:blur(18px) saturate(1.15);-webkit-backdrop-filter:blur(18px) saturate(1.15);opacity:0;cursor:zoom-out;}
@@ -308,6 +308,22 @@ section{padding:60px 26px;}
 .gf-brand--lv img{height:22px;width:auto;display:block;}
 .gf-ttl{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--dark);font-weight:500;margin:0 0 6px;}
 .gf-nt{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);opacity:.8;margin:0;}
+
+/* ── caja de regalo que se abre con confeti ── */
+.gbx{position:relative;text-align:center;margin-top:6px}
+.gbx-present{width:150px;height:150px;margin:0 auto;display:block;padding:0;border:none;background:none;cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent}
+.gbx-present svg{width:100%;height:100%;display:block;transform-origin:50% 100%}
+.gbx-lid{transform-origin:50% 100%;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.gbx-present.shake{animation:gbxShake .5s ease-in-out}
+@keyframes gbxShake{0%,100%{transform:rotate(0)}15%{transform:rotate(-5deg)}30%{transform:rotate(4deg)}45%{transform:rotate(-3deg)}60%{transform:rotate(2deg)}75%{transform:rotate(-1deg)}}
+.gbx.opened .gbx-present{animation:gbxTopple .7s cubic-bezier(.6,-.2,.7,1) forwards;pointer-events:none}
+@keyframes gbxTopple{0%{transform:scale(1);opacity:1}40%{transform:scale(1.06)}100%{transform:scale(.86) translateY(-12px);opacity:0}}
+.gbx.opened .gbx-lid{transform:translateY(-30px) rotate(-18deg)}
+.gbx-tap{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;letter-spacing:1px;color:var(--accent);opacity:.85;margin-top:10px;transition:opacity .3s,max-height .3s;overflow:hidden}
+.gbx.opened .gbx-tap{opacity:0;max-height:0;margin:0}
+.gbx-confetti{position:absolute;top:38%;left:50%;width:0;height:0;pointer-events:none;z-index:10}
+.gbx-confetti-piece{position:absolute;opacity:0}
+.gift-links{margin-top:6px}
 /* Sobre interactivo */
 .env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0;width:100%;}
 .env-body{perspective:700px;position:relative;width:260px;height:200px;animation:env-breathe 3.6s ease-in-out infinite;margin:0 auto;}
@@ -322,6 +338,21 @@ section{padding:60px 26px;}
 .env-tap-hint{font-family:'Lato',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);opacity:.7;margin-top:6px;transition:opacity .3s;}
 .env-interactive.open~.env-tap-hint{opacity:0;pointer-events:none;}
 @keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+
+/* ── HOSPEDAJE ── */
+.hosp-sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(58,74,45,.65);line-height:1.9;margin:8px 0 26px;max-width:320px;margin-left:auto;margin-right:auto;}
+.hosp-card{max-width:360px;margin:0 auto;background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 12px 40px rgba(58,74,45,.14);border:1px solid rgba(125,144,64,.18);text-align:center;padding-bottom:26px;}
+.hosp-photo-wrap{line-height:0;overflow:hidden;}
+.hosp-photo{width:100%;height:210px;object-fit:cover;object-position:center;display:block;transition:transform .6s ease;}
+.hosp-card:hover .hosp-photo{transform:scale(1.05);}
+.hosp-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:22px;color:var(--dark);margin:20px 22px 4px;}
+.hosp-city{font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);opacity:.85;margin-bottom:16px;}
+.hosp-code{display:inline-flex;align-items:center;gap:10px;padding:9px 20px;background:rgba(194,202,138,.18);border:1px solid rgba(125,144,64,.28);border-radius:30px;margin-bottom:18px;}
+.hosp-code-label{font-family:'Lato',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(58,74,45,.6);}
+.hosp-code-val{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:16px;color:var(--dark);letter-spacing:1px;}
+.hosp-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 22px;}
+.btn-hosp{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1.5px solid var(--accent);border-radius:30px;color:var(--accent);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.5px;letter-spacing:.4px;text-decoration:none;background:transparent;transition:background .25s,color .25s;}
+.btn-hosp:hover{background:var(--accent);color:#fff;}
 
 /* ── VENUE PHOTO ── */
 .venue-photo-wrap{margin:-28px -22px 20px;border-radius:18px 18px 0 0;overflow:hidden;line-height:0;}
@@ -451,9 +482,46 @@ footer .fc a{color:inherit;text-decoration:none;}
 #env-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2;transform:scale(1.18);}
 #env-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:3;opacity:0;transform:scale(1.18);}
 #env-flash{position:fixed;inset:0;background:#fff;z-index:9999;opacity:0;pointer-events:none;}
-.envelope-hint{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(237,213,160,0.85);opacity:0;cursor:pointer;white-space:nowrap;z-index:10;}
-.envelope-hint::after{content:'';display:block;width:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,83,0.7),transparent);margin:10px auto 0;animation:hintPulse 2.2s ease-in-out infinite;}
-@keyframes hintPulse{0%,100%{opacity:.4;width:32px;}50%{opacity:1;width:54px;}}
+.envelope-hint{
+  position:absolute;bottom:clamp(48px,8vh,80px);left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  opacity:0;cursor:pointer;white-space:nowrap;z-index:10;pointer-events:auto;
+}
+.envelope-hint-btn{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 32px;
+  border:1px solid rgba(237,213,160,0.55);
+  border-radius:60px;
+  background:rgba(14,8,4,0.28);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(15px,4vw,18px);letter-spacing:3px;
+  color:rgba(245,238,215,0.92);
+  box-shadow:0 0 28px rgba(237,213,160,0.12),inset 0 1px 0 rgba(255,255,255,0.08);
+  animation:envBtnBreathe 3s ease-in-out infinite;
+}
+.envelope-hint-btn::before,.envelope-hint-btn::after{
+  content:'✦';font-style:normal;font-size:10px;
+  color:rgba(201,168,90,0.75);
+  animation:envSparkle 2.8s ease-in-out infinite;
+}
+.envelope-hint-btn::after{animation-delay:1.4s;}
+.envelope-hint-arrow{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+}
+.envelope-hint-arrow span{
+  display:block;width:1px;background:rgba(201,168,90,0.55);
+  animation:envArrowDrop 1.6s ease-in-out infinite;
+}
+.envelope-hint-arrow span:nth-child(1){height:14px;animation-delay:0s;}
+.envelope-hint-arrow span:nth-child(2){height:8px;animation-delay:0.18s;}
+.envelope-hint-arrow span:nth-child(3){height:4px;animation-delay:0.36s;}
+@keyframes envBtnBreathe{
+  0%,100%{box-shadow:0 0 18px rgba(237,213,160,0.10),inset 0 1px 0 rgba(255,255,255,0.08);border-color:rgba(237,213,160,0.45);}
+  50%{box-shadow:0 0 40px rgba(237,213,160,0.25),inset 0 1px 0 rgba(255,255,255,0.12);border-color:rgba(237,213,160,0.75);}
+}
+@keyframes envSparkle{0%,100%{opacity:.4;transform:scale(0.85);}50%{opacity:1;transform:scale(1.2);}}
+@keyframes envArrowDrop{0%,100%{opacity:.3;transform:translateY(-3px);}50%{opacity:.8;transform:translateY(3px);}}
 </style>
 </head>
 <body>
@@ -462,7 +530,12 @@ footer .fc a{color:inherit;text-decoration:none;}
 <div id="envelope-screen" role="button" aria-label="Toca para abrir tu invitación">
   <img id="env-image" src="./sobre.jpg" alt="Invitación Denisse y Jairo">
   <video id="env-video" src="./sobre-video.mp4" playsinline webkit-playsinline muted preload="auto"></video>
-  <p class="envelope-hint" id="env-hint">Toca para abrir</p>
+  <div class="envelope-hint" id="env-hint">
+    <div class="envelope-hint-btn">Toca para abrir</div>
+    <div class="envelope-hint-arrow">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
 </div>
 <div id="env-flash"></div>
 
@@ -613,6 +686,28 @@ footer .fc a{color:inherit;text-decoration:none;}
         <iframe src="https://www.google.com/maps?q=Cuautla,+Morelos,+México&z=14&output=embed" width="100%" height="200" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="El Molino Cuautla Morelos"></iframe>
       </div>
       <a class="btn" href="https://maps.app.goo.gl/KJQX2gmfRngArqzbA" target="_blank" rel="noopener">Cómo Llegar</a>
+    </div>
+  </section>
+
+  <!-- HOSPEDAJE -->
+  <section class="rv" id="shosp">
+    <div class="eyebrow">Para tu Estancia</div>
+    <h2 class="sec-title">Sugerencia de Hospedaje</h2>
+    <p class="hosp-sub">Si vienes de fuera, te recomendamos esta opción de hospedaje cercana al evento.</p>
+    <div class="hosp-card">
+      <div class="hosp-photo-wrap">
+        <img src="./hotel-cuautla.jpg" alt="Hotel de Cuautla — alberca y jardines" class="hosp-photo" loading="lazy">
+      </div>
+      <div class="hosp-name">Hotel de Cuautla</div>
+      <div class="hosp-city">Centro · Cuautla, Morelos</div>
+      <div class="hosp-code">
+        <span class="hosp-code-label">Código de Descuento</span>
+        <span class="hosp-code-val">DV&amp;J</span>
+      </div>
+      <div class="hosp-btns">
+        <a class="btn-hosp" href="https://www.hoteldecuautla.com.mx" target="_blank" rel="noopener">Reservar</a>
+        <a class="btn-hosp" href="https://www.google.com/maps/search/?api=1&query=Hotel+de+Cuautla+Batalla+19+de+Febrero+de+1812+no+114+Cuautla+Morelos" target="_blank" rel="noopener">Cómo Llegar</a>
+      </div>
     </div>
   </section>
 
@@ -794,11 +889,43 @@ footer .fc a{color:inherit;text-decoration:none;}
     <div class="eyebrow">Con Cariño</div>
     <h2 class="sec-title">Mesa de Regalos</h2>
     <p class="gf-sub">Si deseas obsequiarnos algo especial,<br>hemos preparado una lista de regalos para ti.</p>
-    <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60019125" class="gf-card" target="_blank" rel="noopener">
-      <span class="gf-brand gf-brand--lv"><img src="./liverpool.svg" alt="Liverpool" width="121" height="28" loading="lazy"></span>
-      <p class="gf-ttl">Mesa de Regalos</p>
-      <p class="gf-nt">Ver lista de regalos →</p>
-    </a>
+
+    <div class="gbx" id="giftBox">
+      <button type="button" class="gbx-present" id="giftBtn" aria-label="Abrir la mesa de regalos" aria-expanded="false" aria-controls="giftLinks">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="gbxBody" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#8B9848"/><stop offset="100%" stop-color="#566044"/>
+            </linearGradient>
+            <linearGradient id="gbxTop" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7D8F40"/><stop offset="100%" stop-color="#3A4A2D"/>
+            </linearGradient>
+            <linearGradient id="gbxRib" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F5F0E3"/><stop offset="100%" stop-color="#C2CA8A"/>
+            </linearGradient>
+          </defs>
+          <rect x="22" y="52" width="76" height="54" rx="6" fill="url(#gbxBody)"/>
+          <rect x="54" y="52" width="12" height="54" fill="url(#gbxRib)" opacity=".9"/>
+          <g class="gbx-lid">
+            <rect x="16" y="40" width="88" height="17" rx="5" fill="url(#gbxTop)"/>
+            <rect x="54" y="40" width="12" height="17" fill="url(#gbxRib)" opacity=".9"/>
+            <path d="M60 41 C48 22 30 26 39 41 Z" fill="url(#gbxRib)"/>
+            <path d="M60 41 C72 22 90 26 81 41 Z" fill="url(#gbxRib)"/>
+            <circle cx="60" cy="40" r="6" fill="url(#gbxRib)"/>
+          </g>
+        </svg>
+      </button>
+      <div class="gbx-confetti" id="giftConfetti" aria-hidden="true"></div>
+      <p class="gbx-tap">Toca el regalo</p>
+    </div>
+
+    <div class="gift-links" id="giftLinks" hidden>
+      <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60019125" class="gf-card" target="_blank" rel="noopener">
+        <span class="gf-brand gf-brand--lv"><img src="./liverpool.svg" alt="Liverpool" width="121" height="28" loading="lazy"></span>
+        <p class="gf-ttl">Mesa de Regalos</p>
+        <p class="gf-nt">Ver lista de regalos →</p>
+      </a>
+    </div>
     <!-- Sobre interactivo lluvia de sobres -->
     <div style="display:flex;flex-direction:column;align-items:center;gap:0;margin-top:8px;">
       <button class="env-interactive" aria-label="Sobre — toca para abrir" aria-expanded="false">
@@ -1161,7 +1288,7 @@ var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!ring) return;
   var cards=ring.querySelectorAll('.wheel-item');
   var n=cards.length;
-  var radius=480;
+  var radius=340;
   var rot=0,vel=0,isDrag=false,startX=0,lastX=0,rafId=null;
   cards.forEach(function(card,i){
     card.style.transform='rotateY('+(360/n*i)+'deg) translateZ('+radius+'px)';
@@ -1227,47 +1354,55 @@ var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ══════ MESA DE REGALOS — gift box ══════ */
 (function(){
-  var btn=document.getElementById('giftBoxBtn');
-  var reveal=document.getElementById('giftReveal');
-  var canvas=document.getElementById('confettiCanvas');
-  if(!btn||!reveal) return;
-  function launchConfetti(){
-    if(!canvas) return;
-    canvas.width=window.innerWidth;canvas.height=window.innerHeight;
-    var ctx=canvas.getContext('2d');
-    var colors=['#7D8F40','#3A4A2D','#C2CA8A','#8B9848','#566044','#F5F0E3','#E8DDB8'];
-    var ps=[];
-    for(var i=0;i<110;i++){
-      var cx=window.innerWidth/2;
-      ps.push({x:cx+(Math.random()-0.5)*160,y:window.innerHeight*0.5,r:3+Math.random()*5,c:colors[Math.floor(Math.random()*colors.length)],vx:(Math.random()-0.5)*9,vy:-(4+Math.random()*9),ay:0,rot:Math.random()*360,vrot:(Math.random()-0.5)*14,life:1,rect:Math.random()>0.4});
-    }
-    var fr=0;
-    function draw(){
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      var alive=false;
-      ps.forEach(function(p){
-        if(p.life<=0)return;alive=true;
-        p.ay+=0.16;p.x+=p.vx;p.y+=p.vy+p.ay;p.rot+=p.vrot;p.vx*=0.99;p.life-=0.007;
-        ctx.save();ctx.globalAlpha=Math.max(0,p.life);ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.c;
-        if(p.rect)ctx.fillRect(-p.r,-p.r/2,p.r*2,p.r);
-        else{ctx.beginPath();ctx.arc(0,0,p.r,0,Math.PI*2);ctx.fill();}
-        ctx.restore();
-      });
-      if(alive&&fr<320){fr++;requestAnimationFrame(draw);}
-      else ctx.clearRect(0,0,canvas.width,canvas.height);
-    }
-    draw();
-  }
-  btn.addEventListener('click',function(){
-    if(btn.classList.contains('opened'))return;
-    btn.classList.add('opened');
+  var box   = document.getElementById('giftBox');
+  var btn   = document.getElementById('giftBtn');
+  var conf  = document.getElementById('giftConfetti');
+  var links = document.getElementById('giftLinks');
+  if(!box || !btn || !links) return;
+
+  function abrir(){
+    if(box.classList.contains('opened')) return;
+    btn.classList.add('shake');
     btn.setAttribute('aria-expanded','true');
-    launchConfetti();
+
     setTimeout(function(){
-      reveal.classList.add('show');
-      reveal.removeAttribute('aria-hidden');
-    },560);
-  });
+      box.classList.add('opened');
+
+      var colors = ['#7D8F40','#3A4A2D','#C2CA8A','#8B9848','#566044','#F5F0E3','#E8DDB8'];
+      var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!reduced && window.gsap){
+        for(var i=0;i<34;i++){
+          var p = document.createElement('div');
+          p.className = 'gbx-confetti-piece';
+          p.style.background = colors[i % colors.length];
+          var sz = 5 + Math.random()*7;
+          p.style.width = sz+'px'; p.style.height = sz+'px';
+          p.style.borderRadius = Math.random() > .5 ? '50%' : '2px';
+          conf.appendChild(p);
+          var ang = Math.random()*Math.PI*2;
+          var d   = 55 + Math.random()*105;
+          gsap.fromTo(p,
+            {opacity:1,x:0,y:0,scale:1,rotation:0},
+            {x:Math.cos(ang)*d, y:Math.sin(ang)*d - 46, opacity:0, scale:.2,
+             rotation:Math.random()*720-360, duration:.9+Math.random()*.5,
+             ease:'power2.out', delay:Math.random()*.12,
+             onComplete:function(){ var t=this.targets()[0]; if(t && t.remove) t.remove(); }});
+        }
+      }
+
+      links.hidden = false;
+      if(window.gsap){
+        gsap.fromTo(links.children,
+          {opacity:0,y:22},
+          {opacity:1,y:0,duration:.7,stagger:.12,ease:'power2.out',delay:.15});
+      }
+      if(window.ScrollTrigger) ScrollTrigger.refresh();
+    }, 480);
+
+    setTimeout(function(){ btn.style.display = 'none'; }, 1200);
+  }
+
+  btn.addEventListener('click', abrir);
 })();
 
 /* ══════ LLUVIA DE SOBRES (sobre interactivo) ══════ */
