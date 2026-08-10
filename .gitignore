@@ -1,0 +1,15 @@
+.vercel
+.DS_Store
+Thumbs.db
+
+.vercel
+.claude/
+music.mp3
+g*.jpg
+header-inv.jpg
+venue-*.jpg
+hero-bg.jpeg
+bg-*.jpeg
+date-bg.webp
+divider-envelope.jpg
+qr.png
