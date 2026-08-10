@@ -291,44 +291,23 @@ section{padding:60px 26px;}
 #lightbox-close:hover{background:rgba(10,24,48,.8);transform:scale(1.08);}
 
 /* ── MESA DE REGALOS ── */
-.gift-gift-wrap{display:flex;flex-direction:column;align-items:center;gap:32px;padding:8px 0 4px;}
-.gift-box-btn{background:none;border:none;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;padding:0;display:flex;flex-direction:column;align-items:center;gap:16px;}
-.gift-box{position:relative;width:110px;height:108px;filter:drop-shadow(0 8px 28px rgba(58,74,45,.22));}
-.gift-box-lid{
-  position:absolute;top:-20px;left:-10px;right:-10px;height:42px;
-  background:var(--dark);border-radius:8px;
-  transition:transform .55s cubic-bezier(.34,1.56,.64,1),opacity .4s ease;
-  transform-origin:bottom center;display:flex;align-items:center;justify-content:center;
+.gf-sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(58,74,45,.65);line-height:1.9;margin:8px 0 24px}
+.gf-card{
+  display:block;text-decoration:none;
+  background:var(--card);border:1px solid rgba(125,144,64,.18);
+  border-radius:14px;padding:26px 24px;margin:0 auto;
+  max-width:340px;position:relative;overflow:hidden;text-align:center;
+  transition:transform .25s ease,border-color .25s,box-shadow .25s;
+  box-shadow:0 4px 20px rgba(58,74,45,.08);
 }
-.gift-box-btn.opened .gift-box-lid{transform:translateY(-60px) rotate(-12deg);opacity:0;}
-.gift-bow-v{position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:13px;background:var(--accent);}
-.gift-bow-loop{
-  position:absolute;width:20px;height:20px;border-radius:50%;top:-13px;
-  border:6px solid var(--accent);
-}
-.gift-bow-l{left:calc(50% - 27px);}
-.gift-bow-r{right:calc(50% - 27px);}
-.gift-box-base{
-  position:absolute;bottom:0;left:0;right:0;top:20px;
-  background:var(--dark);border-radius:0 0 10px 10px;
-  display:flex;align-items:stretch;justify-content:center;overflow:hidden;
-}
-.gift-ribbon-h{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:13px;background:var(--accent);}
-.gift-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;letter-spacing:2px;color:var(--rose);opacity:.8;transition:opacity .4s;}
-.gift-box-btn.opened .gift-hint{opacity:0;pointer-events:none;height:0;overflow:hidden;}
-.gift-reveal{display:none;flex-direction:column;align-items:center;gap:16px;text-align:center;}
-.gift-reveal.show{display:flex;animation:giftFadeIn .7s ease both;}
-@keyframes giftFadeIn{from{opacity:0;transform:translateY(18px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
-.liverpool-logo-svg{width:min(230px,80%);height:auto;display:block;}
-.gift-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;letter-spacing:2px;color:rgba(58,74,45,.6);margin:0;}
-#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;display:block;}
-/* legacy kept for safe-side */
-.gift-grid{display:flex;flex-direction:column;gap:16px;}
-.gift-card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 6px 36px rgba(14,35,71,.1);display:flex;align-items:center;gap:18px;}
-.gift-logo-wrap{width:64px;height:64px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.gift-body{flex:1;min-width:0;}
-.gift-body .gb-name{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--dark);font-weight:500;margin-bottom:2px;}
-.gift-body .gb-desc{font-family:'Lato',sans-serif;font-size:11px;letter-spacing:1px;color:var(--rose);text-transform:uppercase;}
+.gf-card::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(to right,transparent,rgba(125,144,64,.38),transparent)}
+.gf-card:hover{transform:translateY(-3px);border-color:rgba(125,144,64,.38);box-shadow:0 10px 32px rgba(58,74,45,.14);}
+.gf-card:active{transform:scale(.98);}
+.gf-brand{display:flex;align-items:center;justify-content:center;height:46px;border-radius:10px;margin:0 auto 14px;max-width:200px;}
+.gf-brand--lv{background:#E10098;padding:10px 16px;}
+.gf-brand--lv img{height:22px;width:auto;display:block;}
+.gf-ttl{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--dark);font-weight:500;margin:0 0 6px;}
+.gf-nt{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);opacity:.8;margin:0;}
 /* Sobre interactivo */
 .env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0;width:100%;}
 .env-body{perspective:700px;position:relative;width:260px;height:200px;animation:env-breathe 3.6s ease-in-out infinite;margin:0 auto;}
@@ -361,7 +340,37 @@ section{padding:60px 26px;}
 .album-hashtag{text-align:center;font-family:'Great Vibes',cursive;font-size:40px;color:var(--rose);filter:drop-shadow(0 0 10px rgba(201,162,83,.4));margin-top:4px;}
 
 /* ── RSVP ── */
-.rsvp-card{background:var(--card);border-radius:18px;padding:28px 22px;box-shadow:0 6px 36px rgba(14,35,71,.1);}
+.rsvp-card{max-width:560px;margin:0 auto;background:rgba(245,240,227,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(125,144,64,.38);padding:clamp(44px,6vw,72px) clamp(24px,5vw,60px);position:relative;box-shadow:0 24px 64px rgba(58,74,45,.10),0 4px 20px rgba(125,144,64,.14);border-radius:4px;}
+.rsvp-card::before{content:"";position:absolute;inset:10px;border:1px solid rgba(125,144,64,.20);pointer-events:none;}
+.rsvp-corner{position:absolute;width:52px;height:52px;pointer-events:none;}
+.rsvp-corner--tl{top:0;left:0;}
+.rsvp-corner--tr{top:0;right:0;transform:scaleX(-1);}
+.rsvp-corner--bl{bottom:0;left:0;transform:scaleY(-1);}
+.rsvp-corner--br{bottom:0;right:0;transform:scale(-1,-1);}
+.rsvp-inner{text-align:center;}
+.rsvp-ornament{display:block;margin:0 auto 24px;width:min(260px,75vw);height:auto;}
+.rsvp-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(28px,4vw,44px);color:var(--dark);margin-bottom:14px;line-height:1.15;}
+.rsvp-title em{color:var(--accent);font-style:italic;}
+.rsvp-text{font-family:'Cormorant Garamond',serif;font-size:clamp(14px,1.5vw,16px);color:rgba(58,74,45,.75);line-height:1.85;margin-bottom:28px;max-width:400px;margin-left:auto;margin-right:auto;}
+.rsvp-divider{display:flex;align-items:center;gap:14px;margin-bottom:24px;max-width:300px;margin-left:auto;margin-right:auto;}
+.rsvp-divider::before,.rsvp-divider::after{content:"";flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(125,144,64,.45),transparent);}
+.rsvp-divider-heart{color:var(--accent);flex-shrink:0;opacity:.8;}
+.rsvp-pases-display{max-width:400px;margin:0 auto 24px;padding:16px 28px;background:rgba(194,202,138,.18);border:1px solid rgba(125,144,64,.28);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.rsvp-pases-label{font-family:'Lato',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:rgba(58,74,45,.65);}
+.rsvp-pases-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(32px,5vw,48px);color:var(--dark);line-height:1;}
+.rsvp-toggle{display:flex;gap:10px;max-width:400px;margin:0 auto 18px;}
+.rsvp-toggle-btn{flex:1;padding:14px 8px;border:1.5px solid rgba(125,144,64,.28);background:rgba(245,240,227,.7);cursor:pointer;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--dark);border-radius:8px;transition:all .25s;}
+.rsvp-toggle-btn:disabled{opacity:.45;cursor:not-allowed;}
+.rsvp-toggle-btn.rsvp-toggle-selected-yes{background:rgba(107,155,100,.14);border-color:#4a7848;color:#2F5A28;}
+.rsvp-toggle-btn.rsvp-toggle-selected-no{background:rgba(125,144,64,.09);border-color:var(--accent);color:var(--accent);}
+.rsvp-fields{display:flex;flex-direction:column;gap:10px;max-width:400px;margin:0 auto 18px;}
+.rsvp-input{width:100%;padding:14px 18px;border:1.5px solid rgba(125,144,64,.28);border-radius:10px;background:rgba(255,255,255,.82);font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--dark);letter-spacing:.02em;outline:none;transition:border-color .3s,box-shadow .3s;-webkit-appearance:none;min-height:50px;}
+.rsvp-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(125,144,64,.15);}
+.rsvp-input::placeholder{color:rgba(58,74,45,.45);font-weight:400;}
+.rsvp-deadline{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-family:'Lato',sans-serif;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);font-weight:600;}
+#rsvp-pases-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:rgba(58,74,45,.7);text-align:center;margin:0 auto 18px;max-width:400px;}
+#rsvp-feedback{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;text-align:center;margin:12px auto 0;max-width:400px;}
+.rsvp-name-display{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,6vw,38px);color:var(--dark);line-height:1.2;margin:14px auto 2px;display:none;}
 .btn-wa{
   display:flex;align-items:center;justify-content:center;gap:10px;
   width:100%;margin-top:20px;padding:15px;min-height:48px;
@@ -584,7 +593,7 @@ footer .fc a{color:inherit;text-decoration:none;}
 
     <div class="loc-card rv">
       <div class="venue-photo-wrap">
-        <img src="https://bodasenmorelos.com/wp-content/uploads/2019/01/fabricaelmolino1-1024x699.jpg" alt="Jardín de Eventos El Molino — Cuautla Morelos" class="venue-photo" loading="lazy">
+        <img src="./el-molino.webp" alt="Jardín de Eventos El Molino — Cuautla Morelos" class="venue-photo" loading="lazy">
       </div>
       <div class="lt">El Molino</div>
       <div class="ls">Jardín de Eventos · Antigua Fábrica de Hielo</div>
@@ -784,30 +793,12 @@ footer .fc a{color:inherit;text-decoration:none;}
   <section class="rv" id="sgifts">
     <div class="eyebrow">Con Cariño</div>
     <h2 class="sec-title">Mesa de Regalos</h2>
-    <div class="gift-gift-wrap">
-      <button class="gift-box-btn" id="giftBoxBtn" aria-label="Abrir regalo" aria-expanded="false">
-        <div class="gift-box" aria-hidden="true">
-          <div class="gift-box-lid">
-            <div class="gift-bow-v"></div>
-            <div class="gift-bow-loop gift-bow-l"></div>
-            <div class="gift-bow-loop gift-bow-r"></div>
-          </div>
-          <div class="gift-box-base">
-            <div class="gift-ribbon-h"></div>
-          </div>
-        </div>
-        <span class="gift-hint">Toca el regalo</span>
-      </button>
-      <div class="gift-reveal" id="giftReveal" aria-hidden="true">
-        <svg class="liverpool-logo-svg" viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Liverpool">
-          <rect width="320" height="90" rx="10" fill="#E30016"/>
-          <text x="160" y="62" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="2">Liverpool</text>
-        </svg>
-        <p class="gift-sub">Mesa de Regalos</p>
-        <a class="btn" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60019125" target="_blank" rel="noopener">Ver Lista de Regalos</a>
-      </div>
-    </div>
-    <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+    <p class="gf-sub">Si deseas obsequiarnos algo especial,<br>hemos preparado una lista de regalos para ti.</p>
+    <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60019125" class="gf-card" target="_blank" rel="noopener">
+      <span class="gf-brand gf-brand--lv"><img src="./liverpool.svg" alt="Liverpool" width="121" height="28" loading="lazy"></span>
+      <p class="gf-ttl">Mesa de Regalos</p>
+      <p class="gf-nt">Ver lista de regalos →</p>
+    </a>
     <!-- Sobre interactivo lluvia de sobres -->
     <div style="display:flex;flex-direction:column;align-items:center;gap:0;margin-top:8px;">
       <button class="env-interactive" aria-label="Sobre — toca para abrir" aria-expanded="false">
@@ -897,28 +888,55 @@ footer .fc a{color:inherit;text-decoration:none;}
     <div class="eyebrow">Confirma tu Asistencia</div>
     <h2 class="sec-title">R.S.V.P.</h2>
     <div class="rsvp-card">
-      <p class="rsvp-text">Tu presencia es nuestro mejor regalo.<br>Confirma antes del <strong>14 de noviembre de 2026</strong>.</p>
+      <!-- esquinas decorativas -->
+      <svg class="rsvp-corner rsvp-corner--tl" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--accent)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--accent)" opacity=".5"/></svg>
+      <svg class="rsvp-corner rsvp-corner--tr" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--accent)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--accent)" opacity=".5"/></svg>
+      <svg class="rsvp-corner rsvp-corner--bl" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--accent)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--accent)" opacity=".5"/></svg>
+      <svg class="rsvp-corner rsvp-corner--br" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--accent)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--accent)" opacity=".5"/></svg>
 
-      <p id="rsvp-pases-note" style="display:none"></p>
-      <div class="rsvp-pases-display" id="rsvp-pases-display" style="display:none">
-        <span class="rsvp-pases-label">Pases</span>
-        <span class="rsvp-pases-num" id="rsvp-pases-num">…</span>
+      <div class="rsvp-inner">
+        <!-- ornamento central -->
+        <svg class="rsvp-ornament" viewBox="0 0 260 54" fill="none" aria-hidden="true">
+          <line x1="0" y1="27" x2="100" y2="27" stroke="var(--accent)" stroke-width=".7" opacity=".4"/>
+          <line x1="160" y1="27" x2="260" y2="27" stroke="var(--accent)" stroke-width=".7" opacity=".4"/>
+          <g transform="translate(130,27)">
+            <circle cx="0" cy="0" r="10" fill="none" stroke="var(--accent)" stroke-width=".8" opacity=".5"/>
+            <circle cx="0" cy="0" r="5" fill="none" stroke="var(--accent)" stroke-width=".8" opacity=".4"/>
+            <circle cx="0" cy="0" r="2" fill="var(--accent)" opacity=".6"/>
+            <path d="M-18,0 Q-14,-5 -10,0 Q-14,5 -18,0Z" fill="var(--accent)" opacity=".35"/>
+            <path d="M18,0 Q14,-5 10,0 Q14,5 18,0Z" fill="var(--accent)" opacity=".35"/>
+            <path d="M0,-18 Q5,-14 0,-10 Q-5,-14 0,-18Z" fill="var(--accent)" opacity=".35"/>
+            <path d="M0,18 Q5,14 0,10 Q-5,14 0,18Z" fill="var(--accent)" opacity=".35"/>
+          </g>
+        </svg>
+
+        <p class="rsvp-text">Tu presencia es nuestro mejor regalo.<br>Confirma antes del <strong>14 de noviembre de 2026</strong>.</p>
+
+        <div class="rsvp-divider">
+          <span class="rsvp-divider-heart">✦</span>
+        </div>
+
+        <p id="rsvp-pases-note" style="display:none"></p>
+        <div class="rsvp-pases-display" id="rsvp-pases-display" style="display:none">
+          <span class="rsvp-pases-label">Pases</span>
+          <span class="rsvp-pases-num" id="rsvp-pases-num">…</span>
+        </div>
+
+        <div class="rsvp-toggle">
+          <button class="rsvp-toggle-btn" id="btnYes" type="button">Asistiré</button>
+          <button class="rsvp-toggle-btn" id="btnNo" type="button">No podré asistir</button>
+        </div>
+
+        <div class="rsvp-fields" id="rsvp-fields" style="display:none"></div>
+
+        <button class="btn-wa" id="rsvpBtn" type="button">
+          <span id="rsvp-btn-text">Confirmar Asistencia</span>
+        </button>
+
+        <p id="rsvp-feedback"></p>
+
+        <div class="rsvp-deadline">✦ Fecha límite: 14 de noviembre de 2026 ✦</div>
       </div>
-
-      <div class="rsvp-toggle">
-        <button class="rsvp-toggle-btn" id="btnYes" type="button">Asistiré</button>
-        <button class="rsvp-toggle-btn" id="btnNo" type="button">No podré asistir</button>
-      </div>
-
-      <div class="rsvp-fields" id="rsvp-fields" style="display:none"></div>
-
-      <button class="btn-wa" id="rsvpBtn" type="button">
-        <span id="rsvp-btn-text">Confirmar Asistencia</span>
-      </button>
-
-      <p id="rsvp-feedback"></p>
-
-      <p class="rsvp-deadline">Fecha límite: 14 de noviembre de 2026</p>
     </div>
   </section>
 
