@@ -52,16 +52,17 @@ body{
 .hero{position:relative;width:100%;min-height:100dvh;display:flex;flex-direction:column;background:#3A4A2D;}
 .hero-bg{
   position:absolute;inset:0;
-  background:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908499405-5.jpg') 8% top/cover no-repeat;
+  background:url('./hero.jpg') 47% top/cover no-repeat;
 }
 .hero-veil{
   position:absolute;inset:0;
   background:linear-gradient(
     to bottom,
-    rgba(58,74,45,0.10) 0%,
-    rgba(58,74,45,0.04) 30%,
-    rgba(58,74,45,0.40) 62%,
-    rgba(58,74,45,0.85) 82%,
+    rgba(58,74,45,0.14) 0%,
+    rgba(58,74,45,0.04) 26%,
+    rgba(58,74,45,0.32) 52%,
+    rgba(58,74,45,0.68) 66%,
+    rgba(58,74,45,0.90) 82%,
     #F5F0E3 100%
   );
 }
@@ -290,6 +291,33 @@ section{padding:60px 26px;}
 #lightbox-close{position:absolute;top:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);width:48px;height:48px;border:1px solid rgba(201,162,83,.45);background:rgba(14,35,71,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:50%;color:#F8F5EC;font-size:26px;line-height:1;font-family:'Lato',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s;}
 #lightbox-close:hover{background:rgba(10,24,48,.8);transform:scale(1.08);}
 
+/* ── FRASE INVITADOS ── */
+.quote-sec{padding:56px 30px 44px;text-align:center;position:relative;}
+.quote-orn{display:block;width:132px;margin:0 auto;opacity:0;}
+.quote-orn svg{width:100%;height:auto;display:block;}
+.quote-orn--b{transform:rotate(180deg);}
+.quote-txt{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;
+  font-size:clamp(17px,4.6vw,21px);line-height:1.95;letter-spacing:.015em;
+  color:var(--dark);max-width:340px;margin:26px auto;opacity:0;
+  text-wrap:balance;
+}
+
+/* ── BENDICIÓN ── */
+.bless-sec{padding:14px 30px 52px;text-align:center;}
+.bless-inner{position:relative;display:inline-block;opacity:0;}
+.bless-crest{width:54px;height:auto;display:block;margin:0 auto 16px;}
+.bless-txt{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:clamp(19px,5.2vw,24px);line-height:1.6;color:var(--dark);
+  letter-spacing:.02em;margin:0;
+}
+.bless-txt span{color:var(--accent);}
+.bless-rule{
+  width:64px;height:1px;margin:18px auto 0;
+  background:linear-gradient(90deg,transparent,rgba(125,144,64,.55),transparent);
+}
+
 /* ── MESA DE REGALOS ── */
 .gf-sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(58,74,45,.65);line-height:1.9;margin:8px 0 24px}
 .gf-card{
@@ -324,21 +352,6 @@ section{padding:60px 26px;}
 .gbx-confetti{position:absolute;top:38%;left:50%;width:0;height:0;pointer-events:none;z-index:10}
 .gbx-confetti-piece{position:absolute;opacity:0}
 .gift-links{margin-top:6px}
-/* Sobre interactivo */
-.env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0;width:100%;}
-.env-body{perspective:700px;position:relative;width:260px;height:200px;animation:env-breathe 3.6s ease-in-out infinite;margin:0 auto;}
-.env-body svg.env-svg{width:100%;height:100%;}
-.env-flap-wrap{position:absolute;top:46px;left:18px;width:224px;height:86px;transform-origin:top center;transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:2;}
-.env-interactive.open .env-flap-wrap{transform:rotateX(-175deg);}
-.env-open-content{overflow:hidden;max-height:0;opacity:0;transition:max-height .55s .3s ease,opacity .4s .38s ease;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 20px;text-align:center;pointer-events:none;}
-.env-interactive.open .env-open-content{max-height:240px;opacity:1;pointer-events:auto;}
-.env-mailbox-icon{width:40px;height:40px;color:var(--rose);margin-top:10px;}
-.env-title{font-family:'Great Vibes',cursive;font-size:30px;color:var(--dark);letter-spacing:.5px;line-height:1.2;}
-.env-desc{font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:var(--text);line-height:1.75;opacity:.75;}
-.env-tap-hint{font-family:'Lato',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);opacity:.7;margin-top:6px;transition:opacity .3s;}
-.env-interactive.open~.env-tap-hint{opacity:0;pointer-events:none;}
-@keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
-
 /* ── HOSPEDAJE ── */
 .hosp-sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(58,74,45,.65);line-height:1.9;margin:8px 0 26px;max-width:320px;margin-left:auto;margin-right:auto;}
 .hosp-card{max-width:360px;margin:0 auto;background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 12px 40px rgba(58,74,45,.14);border:1px solid rgba(125,144,64,.18);text-align:center;padding-bottom:26px;}
@@ -581,6 +594,29 @@ footer .fc a{color:inherit;text-decoration:none;}
     </div>
   </div>
 
+  <!-- FRASE INVITADOS -->
+  <section class="quote-sec" id="squote">
+    <div class="quote-orn" aria-hidden="true">
+      <svg viewBox="0 0 120 20" fill="none">
+        <line x1="0" y1="10" x2="44" y2="10" stroke="#7D8F40" stroke-width=".7" opacity=".38"/>
+        <line x1="76" y1="10" x2="120" y2="10" stroke="#7D8F40" stroke-width=".7" opacity=".38"/>
+        <polygon points="60,3 61.8,8.2 67,10 61.8,11.8 60,17 58.2,11.8 53,10 58.2,8.2" fill="#7D8F40" opacity=".6"/>
+      </svg>
+    </div>
+    <p class="quote-txt">
+      Nuestra boda no estaría completa sin la gente que llena
+      nuestra vida de alegría. Es un verdadero privilegio celebrar
+      el amor rodeados de quienes más valoramos.
+    </p>
+    <div class="quote-orn quote-orn--b" aria-hidden="true">
+      <svg viewBox="0 0 120 20" fill="none">
+        <line x1="0" y1="10" x2="44" y2="10" stroke="#7D8F40" stroke-width=".7" opacity=".38"/>
+        <line x1="76" y1="10" x2="120" y2="10" stroke="#7D8F40" stroke-width=".7" opacity=".38"/>
+        <polygon points="60,3 61.8,8.2 67,10 61.8,11.8 60,17 58.2,11.8 53,10 58.2,8.2" fill="#7D8F40" opacity=".6"/>
+      </svg>
+    </div>
+  </section>
+
   <!-- COUNTDOWN -->
   <section id="scd" class="rv">
     <div class="cd-wave-top" aria-hidden="true">
@@ -660,6 +696,20 @@ footer .fc a{color:inherit;text-decoration:none;}
     </svg>
   </div>
 
+  <!-- BENDICIÓN -->
+  <section class="bless-sec" id="sbless">
+    <div class="bless-inner">
+      <svg class="bless-crest" viewBox="0 0 88 64" fill="none" aria-hidden="true">
+        <path d="M44 58 C30 48 16 39 16 27 A12 12 0 0 1 44 21 A12 12 0 0 1 72 27 C72 39 58 48 44 58Z"
+              stroke="#7D8F40" stroke-width="1" opacity=".55" fill="rgba(125,144,64,.05)"/>
+        <path d="M44 6 L44 18 M38 11 L50 11" stroke="#7D8F40" stroke-width="1.1" opacity=".7" stroke-linecap="round"/>
+        <circle cx="44" cy="34" r="2.4" fill="#7D8F40" opacity=".55"/>
+      </svg>
+      <p class="bless-txt">Con la bendición de Dios<br><span>y nuestras familias</span></p>
+      <div class="bless-rule" aria-hidden="true"></div>
+    </div>
+  </section>
+
   <!-- UBICACIONES -->
   <section id="subic">
     <h2 class="sec-title rv">Ubicaciones</h2>
@@ -680,9 +730,6 @@ footer .fc a{color:inherit;text-decoration:none;}
           <small style="font-family:'Lato',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:3px;">Ceremonia</small>
           3:30 pm
         </span>
-      </div>
-      <div class="map-wrap">
-        <iframe src="https://www.google.com/maps?q=Cuautla,+Morelos,+México&z=14&output=embed" width="100%" height="200" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="El Molino Cuautla Morelos"></iframe>
       </div>
       <a class="btn" href="https://maps.app.goo.gl/KJQX2gmfRngArqzbA" target="_blank" rel="noopener">Cómo Llegar</a>
     </div>
@@ -759,7 +806,7 @@ footer .fc a{color:inherit;text-decoration:none;}
       <div class="itv3-item rv">
         <div class="itv3-gem"></div>
         <div class="itv3-time">5:00</div>
-        <div class="itv3-ev">Comida</div>
+        <div class="itv3-ev">Banquete</div>
       </div>
 
       <div class="itv3-item rv">
@@ -849,17 +896,15 @@ footer .fc a{color:inherit;text-decoration:none;}
     </div>
     <div class="wheel-stage">
       <div class="wheel" id="wheel">
-        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908499405-5.jpg" alt="Denisse y Jairo" loading="lazy"></div>
         <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908594740-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
         <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908658040-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
-        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908704383-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
-        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908790468-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="./foto-a.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="./foto-b.jpg" alt="Denisse y Jairo" loading="lazy"></div>
         <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908818865-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
-        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908499405-5.jpg" alt="Denisse y Jairo" loading="lazy"></div>
         <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908594740-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
         <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908658040-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
-        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908704383-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
-        <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908790468-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="./foto-a.jpg" alt="Denisse y Jairo" loading="lazy"></div>
+        <div class="wheel-item"><img src="./foto-b.jpg" alt="Denisse y Jairo" loading="lazy"></div>
         <div class="wheel-item"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/48399193-4870-4e63-ae1b-24b1d034167a/1785908818865-0.jpg" alt="Denisse y Jairo" loading="lazy"></div>
       </div>
     </div>
@@ -887,7 +932,7 @@ footer .fc a{color:inherit;text-decoration:none;}
   <section class="rv" id="sgifts">
     <div class="eyebrow">Con Cariño</div>
     <h2 class="sec-title">Mesa de Regalos</h2>
-    <p class="gf-sub">Si deseas obsequiarnos algo especial,<br>hemos preparado una lista de regalos para ti.</p>
+    <p class="gf-sub">Tu presencia es nuestro regalo más preciado.<br>Si deseas celebrarnos con un obsequio,<br>con infinita gratitud lo recibimos.</p>
 
     <div class="gbx" id="giftBox">
       <button type="button" class="gbx-present" id="giftBtn" aria-label="Abrir la mesa de regalos" aria-expanded="false" aria-controls="giftLinks">
@@ -924,53 +969,6 @@ footer .fc a{color:inherit;text-decoration:none;}
         <p class="gf-ttl">Mesa de Regalos</p>
         <p class="gf-nt">Ver lista de regalos →</p>
       </a>
-    </div>
-    <!-- Sobre interactivo lluvia de sobres -->
-    <div style="display:flex;flex-direction:column;align-items:center;gap:0;margin-top:8px;">
-      <button class="env-interactive" aria-label="Sobre — toca para abrir" aria-expanded="false">
-        <div class="env-body">
-          <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="hc-env-fill" x1="0" y1="1" x2="1" y2="0">
-                <stop offset="0%" stop-color="#f9eef5"/>
-                <stop offset="100%" stop-color="#fdf6fb"/>
-              </linearGradient>
-            </defs>
-            <rect x="18" y="52" width="224" height="132" rx="10" fill="url(#hc-env-fill)" stroke="rgba(201,162,83,.7)" stroke-width="1.4"/>
-            <path d="M18 184 L130 110 L242 184" stroke="rgba(201,162,83,.5)" stroke-width="1" fill="none"/>
-            <line x1="90"  y1="30" x2="90"  y2="20" stroke="#C9A253" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="130" y1="24" x2="130" y2="14" stroke="#C9A253" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
-            <line x1="170" y1="30" x2="170" y2="20" stroke="#C9A253" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
-            <line x1="110" y1="18" x2="110" y2="10" stroke="#4A6A9C" stroke-width="1" stroke-linecap="round" opacity=".4"/>
-            <line x1="150" y1="18" x2="150" y2="10" stroke="#D4B88C" stroke-width="1" stroke-linecap="round" opacity=".4"/>
-            <circle cx="130" cy="118" r="16" fill="rgba(201,162,83,.18)" stroke="rgba(201,162,83,.55)" stroke-width="1"/>
-            <text x="130" y="123" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#0E2347" opacity=".8">J&amp;D</text>
-          </svg>
-          <div class="env-flap-wrap" aria-hidden="true">
-            <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%">
-              <defs>
-                <linearGradient id="hc-flap-fill" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#EDD5A0"/>
-                  <stop offset="100%" stop-color="#f9eef5"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 0 L112 86 L224 0 Z" fill="url(#hc-flap-fill)" stroke="rgba(201,162,83,.7)" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        <div class="env-open-content" aria-live="polite">
-          <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <rect x="8" y="22" width="36" height="24" rx="5"/>
-            <path d="M8 30 Q26 38 44 30"/>
-            <rect x="18" y="8" width="16" height="16" rx="2"/>
-            <path d="M18 8 Q26 3 34 8"/>
-            <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
-          </svg>
-          <p class="env-title">Lluvia de Sobres</p>
-          <p class="env-desc">En la celebración habrá una caja especial donde podrás depositar tu sobre con todo tu cariño.</p>
-        </div>
-      </button>
-      <p class="env-tap-hint">Toca el sobre para abrir</p>
     </div>
   </section>
 
@@ -1156,6 +1154,7 @@ function launchPage(){
     .to('#hBd',{opacity:1,y:0,duration:1.2},'-=1');
   initStars();
   initScrollReveal();
+  initQuoteFade();
   initItinerary();
   initDressCode();
 }
@@ -1186,6 +1185,25 @@ function initScrollReveal(){
   document.querySelectorAll('.rv').forEach(function(el){
     gsap.fromTo(el,{y:36,opacity:0},{y:0,opacity:1,duration:1.3,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%'}});
   });
+}
+
+/* ══════ FRASE + BENDICIÓN (fade suave al centrarse) ══════ */
+function initQuoteFade(){
+  var q = document.getElementById('squote');
+  if(q){
+    gsap.timeline({scrollTrigger:{trigger:q,start:'top 82%'}})
+      .fromTo(q.querySelector('.quote-orn'),{opacity:0,scaleX:.5},{opacity:1,scaleX:1,duration:1.1,ease:'power2.out'})
+      .fromTo(q.querySelector('.quote-txt'),{opacity:0,y:26,filter:'blur(6px)'},
+              {opacity:1,y:0,filter:'blur(0px)',duration:1.7,ease:'power2.out'},'-=0.75')
+      .fromTo(q.querySelector('.quote-orn--b'),{opacity:0,scaleX:.5},{opacity:1,scaleX:1,duration:1.1,ease:'power2.out'},'-=1.0');
+  }
+  var b = document.getElementById('sbless');
+  if(b){
+    gsap.fromTo(b.querySelector('.bless-inner'),
+      {opacity:0,y:24,filter:'blur(5px)'},
+      {opacity:1,y:0,filter:'blur(0px)',duration:1.6,ease:'power2.out',
+       scrollTrigger:{trigger:b,start:'top 85%'}});
+  }
 }
 
 /* ══════ ITINERARIO ══════ */
@@ -1404,20 +1422,6 @@ var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   btn.addEventListener('click', abrir);
 })();
 
-/* ══════ LLUVIA DE SOBRES (sobre interactivo) ══════ */
-(function(){
-  var btn=document.querySelector('.env-interactive');
-  if(!btn) return;
-  btn.addEventListener('click',function(){
-    var isOpen=btn.classList.toggle('open');
-    btn.setAttribute('aria-expanded',isOpen?'true':'false');
-  });
-  btn.addEventListener('touchstart',function(e){
-    e.preventDefault();
-    var isOpen=btn.classList.toggle('open');
-    btn.setAttribute('aria-expanded',isOpen?'true':'false');
-  },{passive:false});
-})();
 
 /* ══════ RSVP — PANEL INTEGRATION (guard silencioso + caché de nombres) ══════ */
 (function(){
