@@ -52,7 +52,7 @@ body{
 .hero{position:relative;width:100%;min-height:100dvh;display:flex;flex-direction:column;background:#3A4A2D;}
 .hero-bg{
   position:absolute;inset:0;
-  background:url('./hero.jpg') 47% top/cover no-repeat;
+  background:url('./hero.jpg') 53% top/cover no-repeat;
 }
 .hero-veil{
   position:absolute;inset:0;
@@ -429,7 +429,14 @@ section{padding:60px 26px;}
 .rsvp-toggle-btn.rsvp-toggle-selected-yes{background:rgba(125,144,64,.14);border-color:var(--accent);color:var(--accent);}
 .rsvp-toggle-btn.rsvp-toggle-selected-no{background:rgba(86,96,68,.10);border-color:var(--lila);color:var(--lila);}
 .rsvp-fields{display:flex;flex-direction:column;gap:9px;margin-bottom:20px;text-align:left;}
-.rsvp-fields-lbl{font-family:'Lato',sans-serif;text-transform:uppercase;letter-spacing:.26em;font-size:11px;color:var(--text);opacity:.8;margin-bottom:2px;}
+.rsvp-fields-lbl{font-family:'Cormorant Garamond',serif;text-transform:uppercase;letter-spacing:.26em;font-size:11px;color:var(--text);opacity:.8;margin-bottom:2px;}
+.rsvp-gracias{max-width:360px;margin:0 auto;padding:26px 22px;background:rgba(125,144,64,.08);border:1.5px solid rgba(125,144,64,.32);border-radius:16px;text-align:center;}
+.rsvp-gracias-icon{color:var(--accent);margin:0 auto 10px;display:block;}
+.rsvp-gracias-title{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--accent);margin-bottom:8px;line-height:1.35;}
+.rsvp-gracias-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15.5px;color:var(--text);opacity:.85;line-height:1.6;margin-bottom:18px;}
+.rsvp-editar-btn{padding:11px 22px;border:1.5px solid rgba(125,144,64,.36);background:transparent;cursor:pointer;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--accent);border-radius:24px;transition:all .25s;}
+.rsvp-editar-btn:hover{background:rgba(125,144,64,.12);}
+.rsvp-editar-btn:disabled{opacity:.45;cursor:not-allowed;}
 .rsvp-input{width:100%;padding:13px 16px;background:rgba(245,240,227,.6);border:1.5px solid rgba(125,144,64,.30);border-radius:12px;font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--text);outline:none;transition:border-color .25s;-webkit-appearance:none;min-height:48px;}
 .rsvp-input:focus{border-color:var(--accent);}
 .rsvp-input::placeholder{color:rgba(58,74,45,.42);}
@@ -942,16 +949,27 @@ footer .fc a{color:inherit;text-decoration:none;}
         </div>
 
         <div class="rsvp-form">
-          <div class="rsvp-toggle">
-            <button class="rsvp-toggle-btn" id="btnYes" type="button">¡Asistiré!</button>
-            <button class="rsvp-toggle-btn" id="btnNo" type="button">No podré asistir</button>
+          <div id="rsvp-bandeja">
+            <div class="rsvp-toggle">
+              <button class="rsvp-toggle-btn" id="btnYes" type="button">¡Asistiré!</button>
+              <button class="rsvp-toggle-btn" id="btnNo" type="button">No podré asistir</button>
+            </div>
+
+            <div class="rsvp-fields" id="rsvp-fields" style="display:none"></div>
+
+            <button class="btn-wa" id="rsvpBtn" type="button">
+              <span id="rsvp-btn-text">Confirmar</span>
+            </button>
           </div>
 
-          <div class="rsvp-fields" id="rsvp-fields" style="display:none"></div>
-
-          <button class="btn-wa" id="rsvpBtn" type="button">
-            <span id="rsvp-btn-text">Confirmar</span>
-          </button>
+          <div class="rsvp-gracias" id="rsvp-gracias" style="display:none">
+            <svg class="rsvp-gracias-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><polyline points="8.5 12.5 11 15 16 9.5"/>
+            </svg>
+            <p class="rsvp-gracias-title" id="rsvp-gracias-title"></p>
+            <p class="rsvp-gracias-sub" id="rsvp-gracias-sub"></p>
+            <button class="rsvp-editar-btn" id="rsvp-editar-btn" type="button">Modificar mi respuesta</button>
+          </div>
 
           <p id="rsvp-feedback"></p>
         </div>
@@ -1354,7 +1372,39 @@ var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var btnConf  = document.getElementById('rsvpBtn');
   var btnText  = document.getElementById('rsvp-btn-text');
   var feedEl   = document.getElementById('rsvp-feedback');
+  var bandejaEl = document.getElementById('rsvp-bandeja');
+  var graciasEl = document.getElementById('rsvp-gracias');
+  var gTitleEl  = document.getElementById('rsvp-gracias-title');
+  var gSubEl    = document.getElementById('rsvp-gracias-sub');
+  var editarBtn = document.getElementById('rsvp-editar-btn');
   if(!btnConf || !btnYes) return;
+
+  // Cierra la bandeja y muestra el agradecimiento con el resumen.
+  function mostrarGracias(estado, nombres){
+    var lista = (nombres || []).filter(function(n){ return n && n.trim(); });
+    if(estado === 'confirmado'){
+      gTitleEl.textContent = '¡Gracias por confirmar!';
+      gSubEl.textContent = lista.length === 1
+        ? 'Te esperamos, ' + lista[0] + '.'
+        : 'Confirmamos ' + lista.length + ' lugares: ' + lista.join(', ') + '.';
+    } else {
+      gTitleEl.textContent = 'Gracias por avisarnos';
+      gSubEl.textContent = 'Lamentamos que no puedas acompañarnos. Te vamos a extrañar.';
+    }
+    bandejaEl.style.display = 'none';
+    graciasEl.style.display = '';
+    editarBtn.disabled = frozen;
+    feedEl.textContent = ''; feedEl.style.color = '';
+  }
+
+  // Reabre la bandeja conservando lo ya capturado.
+  function abrirBandeja(){
+    graciasEl.style.display = 'none';
+    bandejaEl.style.display = '';
+    feedEl.textContent = ''; feedEl.style.color = '';
+  }
+
+  editarBtn.addEventListener('click', function(){ if(!frozen) abrirBandeja(); });
 
   function actualizarBadge(){
     var n = pasesAsignados + menoresAsignados;
@@ -1384,7 +1434,7 @@ var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
       var inp = document.createElement('input');
       inp.type = 'text';
       inp.className = 'rsvp-input';
-      inp.placeholder = total === 1 ? 'Tu nombre completo' : 'Invitado ' + (i+1);
+      inp.placeholder = 'Nombre completo del invitado ' + (i+1);
       inp.autocomplete = 'off';
       inp.maxLength = 60;
       inp.value = savedNames[i] || '';
@@ -1397,7 +1447,7 @@ var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
       var inpM = document.createElement('input');
       inpM.type = 'text';
       inpM.className = 'rsvp-input';
-      inpM.placeholder = menoresAsignados === 1 ? 'Menor' : 'Menor ' + (j+1);
+      inpM.placeholder = 'Nombre del menor ' + (j+1);
       inpM.autocomplete = 'off';
       inpM.maxLength = 60;
       inpM.value = savedNames[idx] || '';
@@ -1444,9 +1494,8 @@ var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
           }
           selectRsvp(d.estado === 'confirmado' ? 'yes' : 'no');
           btnText.textContent = 'Actualizar respuesta';
-          feedEl.textContent = d.estado === 'confirmado'
-            ? '¡Ya tienes confirmada tu asistencia! Puedes actualizar tu respuesta.'
-            : 'Ya tienes registrado que no podrás asistir. Puedes cambiar tu respuesta.';
+          // Ya hay respuesta guardada: la sección arranca cerrada.
+          mostrarGracias(d.estado, savedNames);
         }
       })
       .catch(function(){
@@ -1502,10 +1551,7 @@ var prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
     .then(function(){
       btnText.textContent = 'Actualizar respuesta';
       btnConf.disabled = false;
-      feedEl.style.color = 'var(--accent)';
-      feedEl.textContent = rsvpChoice === 'yes'
-        ? '¡Tu asistencia ha sido confirmada! Nos vemos pronto.'
-        : 'Hemos registrado que no podrás asistir. ¡Gracias por avisarnos!';
+      mostrarGracias(rsvpChoice === 'yes' ? 'confirmado' : 'declino', nombres);
     })
     .catch(function(){
       btnText.textContent = 'Confirmar Asistencia';
