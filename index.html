@@ -1040,15 +1040,17 @@ gsap.registerPlugin(ScrollTrigger);
     gsap.to(envFlash,{opacity:0,duration:1.2,ease:'power2.out',onComplete:function(){envFlash.style.display='none';}});
   }
 
+  // El video está cortado en 4.17s: el fundido a la invitación arranca justo en el corte
+  var CORTE = 4.17;
+  function iniciarFundido(){
+    if(flashStarted) return;
+    flashStarted = true;
+    gsap.to(envFlash,{opacity:1,duration:1,ease:'power2.in',onComplete:revealInvitation});
+  }
   envVideo.addEventListener('timeupdate',function(){
-    if(!flashStarted && envVideo.duration && envVideo.currentTime >= envVideo.duration - 2){
-      flashStarted = true;
-      gsap.to(envFlash,{opacity:1,duration:1,ease:'power2.in',onComplete:revealInvitation});
-    }
+    if(!flashStarted && envVideo.currentTime >= CORTE - 0.2) iniciarFundido();
   });
-  envVideo.addEventListener('ended',function(){
-    gsap.set(envFlash,{opacity:1}); revealInvitation();
-  });
+  envVideo.addEventListener('ended', iniciarFundido);
 
   function openEnvelope(){
     if(opened) return; opened = true;
